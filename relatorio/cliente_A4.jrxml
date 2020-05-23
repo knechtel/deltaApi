@@ -14,9 +14,7 @@
 	<parameter name="image" class="java.lang.String">
 		<defaultValueExpression><![CDATA["/Users/maiquelknechtel/Documents/deltaApi/image/Delta-Arrow-logo.png"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="whatsupImage" class="java.lang.String">
-		<defaultValueExpression><![CDATA["/Users/maiquelknechtel/Desktop/whatsup.jpeg"]]></defaultValueExpression>
-	</parameter>
+	<parameter name="Parameter1" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT loja.cliente.id,
 	loja.cliente.nome,
@@ -56,7 +54,7 @@ where cliente.id = $P{OS}]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="113" splitType="Stretch">
+		<band height="93" splitType="Stretch">
 			<staticText>
 				<reportElement x="20" y="0" width="285" height="55" uuid="79480369-ad5a-483b-bde2-caffb4a57140"/>
 				<textElement>
@@ -95,12 +93,12 @@ where cliente.id = $P{OS}]]>
 			</image>
 			<image>
 				<reportElement x="150" y="60" width="20" height="10" uuid="720f57c0-ce35-4907-b3ed-0a919eb44d07"/>
-				<imageExpression><![CDATA[$P{whatsupImage}]]></imageExpression>
+				<imageExpression><![CDATA["/Users/maiquelknechtel/Desktop/whatsup.jpeg"]]></imageExpression>
 			</image>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
 		<band height="124" splitType="Stretch">
