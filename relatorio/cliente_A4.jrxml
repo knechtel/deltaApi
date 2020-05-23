@@ -14,17 +14,21 @@
 	<parameter name="image" class="java.lang.String">
 		<defaultValueExpression><![CDATA["/Users/maiquelknechtel/Documents/deltaApi/image/Delta-Arrow-logo.png"]]></defaultValueExpression>
 	</parameter>
-	<parameter name="Parameter1" class="java.lang.String"/>
+	<parameter name="whatsupImage" class="java.lang.String">
+		<defaultValueExpression><![CDATA["/Users/maiquelknechtel/Documents/deltaApi/image/whatsup.jpeg"]]></defaultValueExpression>
+	</parameter>
 	<queryString language="SQL">
 		<![CDATA[SELECT loja.cliente.id,
 	loja.cliente.nome,
 	loja.cliente.cpf,
 	loja.cliente.endereco,
-	loja.cliente.email,
-	loja.cliente.telefone
+	loja.cliente.telefone,
+	loja.cliente.email
 FROM loja.cliente
 
-where cliente.id = $P{OS}]]>
+where loja.cliente.id = $P{OS}
+
+]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.label" value="id"/>
@@ -93,7 +97,7 @@ where cliente.id = $P{OS}]]>
 			</image>
 			<image>
 				<reportElement x="150" y="60" width="20" height="10" uuid="720f57c0-ce35-4907-b3ed-0a919eb44d07"/>
-				<imageExpression><![CDATA["/Users/maiquelknechtel/Desktop/whatsup.jpeg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{whatsupImage}]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -150,7 +154,7 @@ where cliente.id = $P{OS}]]>
 	<detail>
 		<band height="272" splitType="Stretch">
 			<subreport>
-				<reportElement x="-11" y="10" width="526" height="140" uuid="6774b4e1-ca93-41b1-8bb2-f4b837314a81">
+				<reportElement x="-11" y="-13" width="526" height="163" uuid="6774b4e1-ca93-41b1-8bb2-f4b837314a81">
 					<property name="com.jaspersoft.studio.element.name" value="aparelho_subrelatorio_A4.jrxml"/>
 				</reportElement>
 				<subreportParameter name="OS_ID">
