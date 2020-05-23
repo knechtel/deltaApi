@@ -42,7 +42,7 @@ public class HelloController {
             parametros.put("OS_ID",  new Integer(request.getParameter("id")));
             parametros.put("image",System.getProperty("user.dir")+"/image/Delta-Arrow-logo.png");
             parametros.put("subReport",System.getProperty("user.dir")+"/relatorio/aparelho_subrelatorio_A4.jasper");
-
+	    parametros.put("whatsupImage",System.getProperty("user.dir")+"/image/whatsup.jpeg");
             JasperReport jasperReport = JasperCompileManager.compileReport(System.getProperty("user.dir")+"/relatorio/cliente_A4.jrxml");
 
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros,conn);
